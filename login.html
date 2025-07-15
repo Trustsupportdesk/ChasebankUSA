@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chase Bank Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0d1c2e, #002d62);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      width: 350px;
+      animation: glow 2s infinite alternate;
+    }
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ffff44; }
+      to { box-shadow: 0 0 25px #00ffffcc; }
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0097a7;
+    }
+    .error {
+      color: #ff5252;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Chase Bank Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="authenticate()">Login</button>
+    <p id="error" class="error"></p>
+  </div>
+
+  <script>
+    function authenticate() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const error = document.getElementById('error');
+
+      if (user === 'Eva566' && pass === 'Beautifuleva$') {
+        window.location.href = 'dashboard.html';
+      } else {
+        error.textContent = 'Invalid username or password';
+      }
+    }
+  </script>
+</body>
+</html>
